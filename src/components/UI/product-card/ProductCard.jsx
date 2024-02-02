@@ -11,7 +11,7 @@ const ProductCard = (props) => {
   const { id, name, image_url, ibu } = props.item;
 
 
-  const addToCart = () => {
+  const addToPage = () => {
     
   };
 
@@ -19,7 +19,7 @@ const ProductCard = (props) => {
     <div className="product__item">
       <div className="product__img">
       <Link to={`/beers/${id}`}>
-        {<img src="" alt="product-img" className="w-50" />}
+        {<img src={image_url} alt="product-img" className="w-50" />}
         </Link>
       </div>
 
@@ -29,7 +29,7 @@ const ProductCard = (props) => {
         </h5>
         <div className=" d-flex align-items-center justify-content-between ">
           <span className="product__price">₹{ibu}</span>
-          <button className="addTOCart__btn" onClick={addToCart}>
+          <button className="addTOPage__btn" onClick={addToPage}>
             Add to Page
           </button>
         </div>

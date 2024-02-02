@@ -5,6 +5,7 @@ import { Container } from "reactstrap";
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
+import { favoriteSliceUiActions } from "../../store/shopping-cart/favoriteUISlice";
 
 import "../../styles/header.css";
 
@@ -18,8 +19,8 @@ const nav__links = [
     path: "/beers",
   },
   {
-    display: "Favorites",
-    path: "/favorites",
+    display: "Favorite",
+    path: "/favorite",
   },
   {
     display: "Contact",
@@ -33,13 +34,13 @@ const Header = () => {
 
   const totalQuantity = 0; /// remove it after adding store
 
-
+//   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const dispatch = useDispatch();
 
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
 
-  const togglePage = () => {
-   
+  const toggleCart = () => {
+    dispatch(favoriteSliceUiActions.toggle());
   };
 
   useEffect(() => {
@@ -90,7 +91,7 @@ const Header = () => {
 
           {/* ======== nav right icons ========= */}
           <div className="nav__right d-flex align-items-center gap-4">
-            <span className="cart__icon" onClick={togglePage}>
+            <span className="cart__icon" onClick={toggleCart}>
               <i class="ri-shopping-basket-line"></i>
               <span className="cart__badge">{totalQuantity}</span>
             </span>
