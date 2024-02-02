@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import ProductCard from "../components/UI/product-card/ProductCard";
 import { getAllProducts } from "../api";
-import { productActions } from "../store/shopping-cart/productSlice";
+import { productActions } from "../store/favorite-page/productSlice";
 
 
 import "../styles/all-foods.css";

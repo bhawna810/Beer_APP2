@@ -11,7 +11,7 @@ import { useDispatch , useSelector } from "react-redux";
 import "../styles/product-details.css";
 
 
-import { favoriteActions } from "../store/shopping-cart/favoriteSlice";
+import { favoriteActions } from "../store/favorite-page/favoriteSlice";
 
 const ProductDetails = () => {
 
@@ -90,7 +90,7 @@ const ProductDetails = () => {
                 
 
                 <button onClick={addItem} className="addTOCart__btn">
-                  Add to Cart
+                  Add to Page
                 </button>
               </div>
             </Col>

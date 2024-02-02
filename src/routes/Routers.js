@@ -4,8 +4,9 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "../pages/Home";
 import AllBeers from "../pages/AllBeers";
 import ProductDetails from "../pages/ProductDetails";
-import FavoriteHeaderUI from "../components/UI/favorite-section/FavoriteHeaderUI";
+// import FavoriteHeaderUI from "../components/UI/favorite-section/FavoriteHeaderUI";
 
+import FavroitePage from "../pages/FavroitePage";
 
 const Routers = () => {
   return (
@@ -14,7 +15,7 @@ const Routers = () => {
        <Route path="/home" element={<Home />} />
      <Route path="/beers" element={<AllBeers />} />
      <Route path="/beers/:id" element={<ProductDetails />} />
-     <Route path="/favorites" element={<FavoriteHeaderUI />} />
+     <Route path="/favorites" element={<FavroitePage />} />
     
     </Routes>
   );

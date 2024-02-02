@@ -5,14 +5,21 @@ import "../../../styles/product-card.css";
 import { Link } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
-
+import { favoriteActions } from "../../../store/favorite-page/favoriteSlice";
 
 const ProductCard = (props) => {
   const { id, name, image_url, ibu } = props.item;
-
+  const dispatch = useDispatch();
 
   const addToPage = () => {
-    
+    dispatch(
+      favoriteActions.addItem({
+        id,
+        name,
+        image_url,
+        ibu,
+      })
+    );
   };
 
   return (
@@ -29,7 +36,7 @@ const ProductCard = (props) => {
         </h5>
         <div className=" d-flex align-items-center justify-content-between ">
           <span className="product__price">₹{ibu}</span>
-          <button className="addTOPage__btn" onClick={addToPage}>
+          <button className="addTOCart__btn" onClick={addToPage}>
             Add to Page
           </button>
         </div>
