@@ -42,7 +42,7 @@ const FavoriteHeaderUI = () => {
             Total Item <span>{totalQuantity}</span>
           </h6>
           <button>
-            <Link to="/favorite" onClick={togglePage}>
+            <Link to="/favorites" onClick={togglePage}>
               Favorite Page
             </Link>
           </button>

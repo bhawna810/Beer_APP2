@@ -6,7 +6,7 @@ import { Container, Row, Col } from "reactstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 import ProductCard from "../components/UI/product-card/ProductCard";
-import { getAllProducts } from "../api";
+import { getAllProducts, getSearchedProduct } from "../api";
 import { productActions } from "../store/favorite-page/productSlice";
 
 
@@ -16,10 +16,38 @@ import "../styles/all-foods.css";
 const AllBeers = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
-  
+  const [searchedProduct, setSearchedProduct] = useState("");
+
   const productData = useSelector((state) => state.product.productItems);
 
-  // console.log(productData);
+  const useDebounce = (value, delay) => {
+    const [debounceValue,setDebounceValue]=useState(value);
+    useEffect(() => {
+        const handler = setTimeout(() => {
+            setDebounceValue(value);
+        }, delay);
+        return () => {
+            clearTimeout(handler)
+        }
+    }, [value,delay])
+    
+    return debounceValue;
+}
+
+  const debouceSearchTerm = useDebounce(searchTerm, 500);
+
+  useEffect(() => {
+    if(debouceSearchTerm) {
+      fetchProduct(debouceSearchTerm);
+    }else {
+      setSearchedProduct("");
+      console.log('Something else')
+    }
+  },[debouceSearchTerm]) 
+
+  const fetchProduct = (value) => getSearchedProduct(value, setSearchedProduct);
+ 
+
 
   useEffect(() => {
     // console.log(productData);
@@ -33,6 +61,7 @@ const AllBeers = () => {
   }, []);
 
   
+
   return (
     <Cover title="Beers">
       <CommonSection title="Beers" />
@@ -46,7 +75,7 @@ const AllBeers = () => {
                   type="text"
                   placeholder="I'm looking for...."
                   value={searchTerm}
-                
+                  onChange={(e)=>setSearchTerm(e.target.value)}
                 />
                 <span>
                   <i class="ri-search-line"></i>
@@ -60,12 +89,18 @@ const AllBeers = () => {
                 </select>
               </div>
             </Col>
-
-            {productData.map((item) => (
-              <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mb-4">
-                <ProductCard item={item} />
-              </Col>
-            ))}
+            
+            {
+              searchedProduct ? searchedProduct.map((item) => (
+                <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mb-4">
+                  <ProductCard item={item} />
+                </Col>
+              )) : productData.map((item) => (
+                <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mb-4">
+                  <ProductCard item={item} />
+                </Col>
+              ))
+            }
 
           </Row>
         </Container>
