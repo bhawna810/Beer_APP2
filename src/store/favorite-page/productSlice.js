@@ -12,25 +12,20 @@ const setProduct = (item) => {
 const initialState = {
     productItems: itemss
 };
-// console.log("Heelo productslice" + initialState.productItems.length);
 
 const productSlice = createSlice({
     name: "product",
     initialState,
-  
+   
     reducers: {
        
+
         addProduct(state, action) {
-            
+           
             const newItem = action.payload;
-            // console.log("Heelo productslice" + newItem);
-            const existingItems = state.productItems.length;
-      
-            if (existingItems === 0) {
-              state.productItems = newItem;
-            } 
-      
-            setProduct(newItem);
+
+            state.productItems = [...state.productItems, ...newItem];
+            setProduct(state.productItems);
           },
     },
   });

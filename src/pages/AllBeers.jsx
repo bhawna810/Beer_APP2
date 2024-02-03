@@ -17,8 +17,51 @@ const AllBeers = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
   const [searchedProduct, setSearchedProduct] = useState("");
-
+  // const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   const productData = useSelector((state) => state.product.productItems);
+ 
+  
+  const [page, setPage] = useState(1);
+
+ 
+  // Infinite Scroll
+  
+  const fetchData = () => {
+    getAllProducts(page, setError).then((data) => {
+              dispatch(productActions.addProduct(data));
+              // setIsLoading(false);
+      });
+  }
+
+
+  useEffect(() => {
+    fetchData();
+  }, [page]);
+  
+  const handleScroll = () => {
+    try{
+      if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight) {
+        setPage((prev) => prev +1);
+        // setIsLoading(false);
+        console.log(page);
+      }
+    }catch(error){
+      console.log(error);
+    }
+  };
+  
+  useEffect(() => {
+    console.log("second ussefect calling" + page);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
+
+  // search using debounce
+  // let finalData;
+
 
   const useDebounce = (value, delay) => {
     const [debounceValue,setDebounceValue]=useState(value);
@@ -46,21 +89,6 @@ const AllBeers = () => {
   },[debouceSearchTerm]) 
 
   const fetchProduct = (value) => getSearchedProduct(value, setSearchedProduct);
- 
-
-
-  useEffect(() => {
-    // console.log(productData);
-     if (productData) {
-
-      getAllProducts().then((data) => {
-         dispatch(productActions.addProduct(data));
-        //  console.log("Heelo data" + JSON.stringify(data) );
-      });
-    }
-  }, []);
-
-  
 
   return (
     <Cover title="Beers">
@@ -98,6 +126,7 @@ const AllBeers = () => {
               )) : productData.map((item) => (
                 <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mb-4">
                   <ProductCard item={item} />
+                  {/* {isLoading && <div>Loading...</div>} */}
                 </Col>
               ))
             }
