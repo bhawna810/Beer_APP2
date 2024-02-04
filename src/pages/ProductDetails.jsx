@@ -74,9 +74,9 @@ const ProductDetails = () => {
         <Container>
           <Row>
 
-            <Col lg="4" md="4">
+            <Col lg="6" md="6">
               <div className="product__main-img">
-                <img src={previewImg} alt="" className="w-100" />
+                <img src={previewImg} alt="" className="previewImg" />
               </div>
             </Col> 
 

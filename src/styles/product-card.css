@@ -8,6 +8,12 @@
 .product__img {
   margin-bottom: 20px;
   transition: 0.4s;
+  /* height: 20px; */
+}
+
+.product__img .w-50{
+  height: 250px;
+  width: 40% !important;
 }
 
 .product__img:hover {

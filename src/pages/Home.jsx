@@ -7,6 +7,10 @@ import "../styles/hero-section.css";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
 
+import red_wine from "../assets/images/red-wine.png";
+import Beer_RedPrince from "../assets/images/Beer_RedPrince.png";
+import BottleOfBeer from "../assets/images/bottleOfBeer.jpeg";
+
 const Home = () => {
   
 
@@ -58,7 +62,7 @@ const Home = () => {
 
             <Col lg="6" md="6">
               <div className="hero__img">
-                <img src="" alt="hero-img" className="w-100" />
+                <img src={BottleOfBeer} alt="hero-img" className="home1__img" />
               </div>
             </Col>
           </Row>
