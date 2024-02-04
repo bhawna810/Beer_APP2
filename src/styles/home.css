@@ -10,6 +10,11 @@
   color: #777;
 }
 
+.test-img{
+  width: 400px;
+  height: 400px;
+}
+
 .feature__item p {
   color: #777;
 }
@@ -48,6 +53,13 @@
 .tasty__treat-desc {
   color: #777;
   line-height: 28px;
+}
+
+.why__tasty-treat , .test-div{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* justify-content: center; */
 }
 
 .choose__us-title {
@@ -160,4 +172,6 @@
   .why__choose-us {
     padding-top: 0 !important;
   }
+
 }
+

@@ -120,13 +120,13 @@ const ProductDetails = () => {
                   <div className="review pt-5">
                     <p className="user__name mb-0">chirag</p>
                     <p className="user__email">chirag@gmail.com</p>
-                    <p className="feedback__text">great product</p>
+                    <p className="feedback__text">Classic</p>
                   </div>
 
                   <div className="review">
                     <p className="user__name mb-0">Bhawna</p>
                     <p className="user__email">chirag@gmail.com</p>
-                    <p className="feedback__text">tasty</p>
+                    <p className="feedback__text">Chill</p>
                   </div>
 
                   <form className="form" onSubmit={submitHandler}>

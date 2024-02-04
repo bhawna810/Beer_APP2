@@ -7,9 +7,11 @@ import "../styles/hero-section.css";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
 
-import red_wine from "../assets/images/red-wine.png";
+import network from "../assets/images/network.png";
 import Beer_RedPrince from "../assets/images/Beer_RedPrince.png";
 import BottleOfBeer from "../assets/images/bottleOfBeer.jpeg";
+
+import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
 
 const Home = () => {
   
@@ -72,11 +74,11 @@ const Home = () => {
       <section className="why__choose-us">
         <Container>
           <Row>
-            <Col lg="6" md="6">
+            {/* <Col lg="6" md="6">
               <img src="" alt="why-tasty-treat" className="w-100" />
-            </Col>
+            </Col> */}
 
-            <Col lg="6" md="6">
+            <Col >
               <div className="why__tasty-treat">
                 <h2 className="tasty__treat-title mb-4">
                   Why <span>Cheers Beers?</span>
@@ -142,12 +144,15 @@ const Home = () => {
                   Distinctio quasi qui minus quos sit perspiciatis inventore
                   quis provident placeat fugiat!
                 </p>
-
+                <TestimonialSlider />
               </div>
             </Col>
 
             <Col lg="6" md="6">
-              <img src="" alt="testimonial-img" className="w-100" />
+              <div className="test-div">
+                 <img src={network} alt="testimonial-img" className="test-img" />
+              </div>
+             
             </Col>
           </Row>
         </Container>

@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { favoriteActions } from "../../../store/favorite-page/favoriteSlice";
 
 const FavoriteItem = ({ item }) => {
-  const { id, name, ibu, image_url, quantity, totalPrice } = item;
+  const { id, name, ibu, image_url, quantity} = item;
 
   const dispatch = useDispatch();
 
@@ -40,7 +40,7 @@ const FavoriteItem = ({ item }) => {
           <div>
             <h6 className="fav__product-title">{name}</h6>
             <p className=" d-flex align-items-center gap-5 fav__product-price">
-              {quantity}x <span>₹{totalPrice}</span>
+               
             </p>
             <div className=" d-flex align-items-center justify-content-between increase__decrease-btn">
               <span className="increase__btn" onClick={incrementItem}>

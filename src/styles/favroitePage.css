@@ -1,31 +1,31 @@
 th {
-    text-align: center;
+  text-align: center;
+}
+
+.fav__img-box {
+  width: 80px;
+}
+
+.fav__img-box img {
+  width: 100%;
+}
+
+.fav__item-del i {
+  cursor: pointer;
+}
+
+.fav__page-btn button a:hover {
+  color: #fff;
+}
+
+.fav__subtotal {
+  color: #df2020;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  th,
+  td {
+    font-size: 0.8rem;
   }
-  
-  .fav__img-box {
-    width: 80px;
-  }
-  
-  .fav__img-box img {
-    width: 100%;
-  }
-  
-  .fav__item-del i {
-    cursor: pointer;
-  }
-  
-  .fav__page-btn button a:hover {
-    color: #fff;
-  }
-  
-  .fav__subtotal {
-    color: #df2020;
-    font-size: 1.5rem;
-  }
-  
-  @media only screen and (max-width: 768px) {
-    th,
-    td {
-      font-size: 0.8rem;
-    }
-  }
+}

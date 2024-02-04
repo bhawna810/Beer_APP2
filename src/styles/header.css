@@ -4,6 +4,12 @@
   line-height: 100px;
 }
 
+
+.ri-beer-fill{
+   size: 20px;
+   color: #df2020;
+}
+
 .logo {
   text-align: center;
 }
@@ -17,8 +23,9 @@
   font-weight: 600;
   font-size: 1rem;
   color: #212245;
-  margin-top: -40px;
+  margin-top: 20px;
   margin-bottom: 0;
+  /* color: #df2020; */
 }
 
 .menu a {
@@ -138,10 +145,10 @@
     line-height: 80px;
   }
 
-  .logo img {
+  /* .logo img {
     margin-top: -70px !important;
-  }
+  } */
   .logo h5 {
-    margin-top: -55px;
+    margin-top: 4px;
   }
 }

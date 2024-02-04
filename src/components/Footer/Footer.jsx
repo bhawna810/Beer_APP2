@@ -11,7 +11,7 @@ const Footer = () => {
         <Row>
           <Col lg="3" md="4" sm="6">
             <div className=" footer__logo text-start">
-              <img src="" alt="logo" />
+              
               <h5>Cheers Beers</h5>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -52,8 +52,8 @@ const Footer = () => {
           </Col>
 
           <Col lg="3" md="4" sm="6">
-            <h5 className="footer__title">Newsletter</h5>
-            <p>Subscribe our newsletter</p>
+            <h5 className="footer__title">Message</h5>
+            <p>Send us some Message</p>
             <div className="newsletter">
               <input name = "email" type="email" placeholder="Enter your email" />
               <span>

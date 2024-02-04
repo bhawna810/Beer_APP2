@@ -66,8 +66,8 @@ const Header = () => {
           <div className="logo">
            <Link to={`/home`}>
             { <>
-                <img src= "" alt="logo" />
-                <h5>Cheers Beers</h5>
+                {/* <i class="ri-beer-fill"></i> */}
+                <h5 >Cheers Beers</h5>
               </>
              }
             </Link>
